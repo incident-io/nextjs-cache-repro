@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export const Ticker = () => {
   const [resp, setResp] = useState<{
-    response: { datetime: string };
+    status: number;
     headers: Record<string, string>;
   } | null>(null);
 
@@ -29,8 +29,8 @@ export const Ticker = () => {
   return (
     <>
       <div>
-        Loaded via Route Handler time is <br />
-        <pre>{resp.response.datetime}</pre>
+        Loaded via Route Handler status
+        <pre>{resp.status}</pre>
       </div>
       <div>
         Headers seen in Route Handler are{" "}

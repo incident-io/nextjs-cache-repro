@@ -4,15 +4,13 @@ export const runtime = "edge";
 
 export async function GET(_request: NextRequest) {
   const response = await fetch(
-    "http://worldtimeapi.org/api/timezone/Europe/London",
+    "https://app.incident.io/api/status_page_content/game-days/incidents/01H0JR44W6VQ1R4PTA97R21WTX",
     { next: { revalidate: 30 } }
   );
-  const json = await response.json();
-
   const headers = Object.fromEntries(response.headers.entries());
 
   return NextResponse.json({
-    response: json,
+    status: response.status,
     headers,
   });
 }
