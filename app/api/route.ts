@@ -1,5 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+export const runtime = "edge";
+
 export async function GET(_request: NextRequest) {
   const response = await fetch(
     "http://worldtimeapi.org/api/timezone/Europe/London",
